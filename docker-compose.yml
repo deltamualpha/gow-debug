@@ -1,0 +1,15 @@
+version: "3.5"
+networks:
+  gow_debug:
+    name: gow_debug
+services:
+  gow_debug:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./:/gow-debug
+    networks:
+      - gow_debug
